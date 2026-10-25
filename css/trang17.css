@@ -1,6 +1,6 @@
 /* ==========================================================================
 AidMatch - Trang 17 Self-Contained Stylesheet
-Includes Standard Layout & Bottom-Right Toast Notifications (Trang 14 Style)
+Synchronized with Image Specifications & Trang 16 Background Layout
 ========================================================================== */
 
 :root {
@@ -42,6 +42,9 @@ Includes Standard Layout & Bottom-Right Toast Notifications (Trang 14 Style)
   --emerald-600: #059669;
   --emerald-700: #047857;
 
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -60,18 +63,29 @@ Includes Standard Layout & Bottom-Right Toast Notifications (Trang 14 Style)
   padding: 0;
 }
 
+html,
 body {
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
-  background-color: var(--slate-50);
+  min-height: 100vh;
+  font-family: var(--font-sans);
   color: var(--slate-800);
   line-height: 1.5;
-  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+
+  /* Giống hệt Trang 16: Hình nền với lớp phủ màu mờ */
+  background-image:
+    linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.85)),
+    url("../images/nen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -81,7 +95,8 @@ a {
 
 /* App Header */
 .dau-trang-ung-dung {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--slate-200);
   position: sticky;
   top: 0;
@@ -262,10 +277,11 @@ a {
   position: relative;
 }
 
-/* Sidebar */
+/* Sidebar Navigation - Giống Trang 16 */
 .thanh-ben {
   width: 16rem;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
   border-right: 1px solid var(--slate-200);
   display: flex;
   flex-direction: column;
@@ -366,7 +382,7 @@ a {
 .chan-thanh-ben {
   padding: 1rem;
   border-top: 1px solid var(--slate-200);
-  background-color: var(--slate-50);
+  background-color: rgba(248, 250, 252, 0.8);
   font-size: 0.75rem;
   color: var(--slate-500);
   text-align: center;
@@ -380,7 +396,7 @@ a {
   z-index: 45;
 }
 
-/* Main Content */
+/* Main Content - Giống Trang 16 */
 .noi-dung-chinh {
   flex: 1;
   padding: 1.5rem 2rem;
@@ -390,6 +406,7 @@ a {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  background-color: transparent;
 }
 
 .dau-trang-noi-dung {
@@ -409,7 +426,7 @@ a {
   color: var(--slate-500);
 }
 
-/* KPI Cards */
+/* KPI Cards - Giống Trang 16 */
 .luoi-chi-so-kpi {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -428,7 +445,8 @@ a {
 }
 
 .the-kpi {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
   padding: 1.25rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--slate-200);
@@ -526,9 +544,10 @@ a {
   margin-top: 0.75rem;
 }
 
-/* Panels */
+/* Panels - Giống Trang 16 */
 .khung-chua {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--slate-200);
   box-shadow: var(--shadow-xs);
@@ -574,7 +593,7 @@ a {
 
 .nhom-bo-loc select {
   padding: 0.5rem;
-  background-color: var(--slate-50);
+  background-color: rgba(248, 250, 252, 0.8);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-md);
   font-size: 0.8rem;
@@ -632,7 +651,7 @@ a {
   margin-bottom: 0.75rem;
 }
 
-/* Tables */
+/* Tables - Giống Trang 16 */
 .boc-bang-co-the-cuon {
   overflow-x: auto;
   border-radius: var(--radius-md);
@@ -647,7 +666,7 @@ a {
 }
 
 .bang-du-lieu th {
-  background: var(--slate-50);
+  background: rgba(248, 250, 252, 0.9);
   padding: 0.625rem 0.875rem;
   border-bottom: 1px solid var(--slate-200);
   font-weight: 700;
@@ -660,9 +679,9 @@ a {
   color: var(--slate-700);
 }
 
-/* Timeline & Meta Box */
+/* Timeline & Meta Box - Giống Trang 16 */
 .o-thong-tin-nha-tai-tro {
-  background: var(--slate-50);
+  background: rgba(248, 250, 252, 0.85);
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   font-size: 0.8rem;
@@ -720,7 +739,7 @@ a {
 }
 
 .o-tom-tat-trang-thai {
-  background: var(--emerald-50);
+  background: rgba(236, 253, 245, 0.9);
   border: 1px solid var(--emerald-100);
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
@@ -752,7 +771,7 @@ a {
 .dieu-khien-bieu-mau {
   width: 100%;
   padding: 0.5rem 0.75rem;
-  background: var(--slate-50);
+  background: rgba(248, 250, 252, 0.8);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-md);
   font-size: 0.875rem;
@@ -904,7 +923,7 @@ a {
   margin-bottom: 0.75rem;
 }
 .canh-bao-do-hong {
-  background: var(--rose-50);
+  background: rgba(255, 241, 242, 0.9);
   border: 1px solid var(--rose-100);
   color: var(--rose-700);
 }
@@ -934,9 +953,7 @@ a {
   text-transform: uppercase;
 }
 
-/* ==========================================================================
-   TOAST NOTIFICATIONS (Chuẩn kiểu Trang 14 ở góc phải dưới)
-   ========================================================================== */
+/* Toast Notifications Container */
 .khung-thong-bao-noi {
   position: fixed;
   bottom: 1.25rem;
